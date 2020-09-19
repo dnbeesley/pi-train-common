@@ -17,20 +17,14 @@ public class MotorControl {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int id;
 
+  @Column(name = "CHANNEL")
+  private byte channel;
+
   @Column(name = "IS_REVERSED")
   private boolean isReversed;
 
-  @Column(name = "FORWARD_PIN")
-  private byte forwardPin;
-
-  @Column(name = "REVERSE_PIN")
-  private byte reversePin;
-
   @Column(name = "SPEED")
   private short speed;
-
-  @Column(name = "SPEED_PIN")
-  private byte speedPin;
 
   public int getId() {
     return id;
@@ -38,6 +32,14 @@ public class MotorControl {
 
   public void setId(int id) {
     this.id = id;
+  }
+
+  public byte getChannel() {
+    return this.channel;
+  }
+
+  public void setChannel(byte channel) {
+    this.channel = channel;
   }
 
   public boolean isReversed() {
@@ -48,35 +50,11 @@ public class MotorControl {
     this.isReversed = isReversed;
   }
 
-  public byte getForwardPin() {
-    return forwardPin;
-  }
-
-  public void setForwardPin(byte forwardPin) {
-    this.forwardPin = forwardPin;
-  }
-
-  public byte getReversePin() {
-    return reversePin;
-  }
-
-  public void setReversePin(byte reversePin) {
-    this.reversePin = reversePin;
-  }
-
   public short getSpeed() {
     return speed;
   }
 
   public void setSpeed(short speed) {
     this.speed = speed;
-  }
-
-  public byte getSpeedPin() {
-    return speedPin;
-  }
-
-  public void setSpeedPin(byte speedPin) {
-    this.speedPin = speedPin;
   }
 }
